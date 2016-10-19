@@ -51,6 +51,6 @@ Copy everything in 'out' folder to SD root and run!
  
  AuroraWright for being helpful with better sysmod injection and stuff!
     
- Me (Rei) for coding everything else.
+ Rei for coding everything else.
  
  The community for your support and help!
