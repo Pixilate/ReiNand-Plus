@@ -12,7 +12,7 @@ dir_data := data
 dir_build := build
 dir_cakehax := CakeHax
 dir_cakebrah := CakeBrah
-dir_loader := loader
+dir_loader := injector
 dir_out := out
 dir_payload := payloads
 
@@ -52,7 +52,7 @@ $(dir_out)/arm9loaderhax.bin: $(dir_build)/main.bin
 	@cp -av $< $@
 
 .PHONY: $(dir_out)/$(name).dat
-$(dir_out)/$(name).dat: $(dir_build)/main.bin $(dir_out)/rei/ $(dir_out)/rei/patches
+$(dir_out)/$(name).dat: $(dir_build)/main.bin $(dir_out)/rei/ $(dir_out)/rei/
 	@$(MAKE) $(FLAGS) -C $(dir_cakehax) launcher
 	dd if=$(dir_build)/main.bin of=$@ bs=512 seek=144
     
