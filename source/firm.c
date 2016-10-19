@@ -57,7 +57,7 @@ void loadFirm(void){
     memcpy((u8*)mpuOffset, mpu, sizeof(mpu));
     
     //Inject custom loader
-    fopen("/rei/loader.cxi", "rb");
+    fopen("/rei+/loader.cxi", "rb");
     u8 *arm11SysMods = (u8 *)firm + section[0].offset;
     Size ldrInFirmSize;
     Size ldrFileSize = fsize();
