@@ -5,7 +5,7 @@ AS := arm-none-eabi-as
 LD := arm-none-eabi-ld
 OC := arm-none-eabi-objcopy
 
-name := ReiNand
+name := ReiNand+
 
 dir_source := source
 dir_data := data
@@ -34,7 +34,7 @@ a9lh: $(dir_out)/arm9loaderhax.bin
 launcher: $(dir_out)/$(name).dat 
 
 .PHONY: loader
-loader: $(dir_out)/rei/loader.cxi
+loader: $(dir_out)/rei+/loader.cxi
 
 .PHONY: ninjhax
 ninjhax: $(dir_out)/3ds/$(name)
@@ -62,16 +62,16 @@ $(dir_out)/3ds/$(name):
 	@mv $(dir_out)/$(name).3dsx $@
 	@mv $(dir_out)/$(name).smdh $@
     
-$(dir_out)/rei/: $(dir_data)/firmware.bin $(dir_data)/splash.bin
-	@mkdir -p "$(dir_out)/rei"
+$(dir_out)/rei+/: $(dir_data)/firmware.bin $(dir_data)/splash.bin
+	@mkdir -p "$(dir_out)/rei+"
 	@cp -av $^ $@
 
-$(dir_out)/rei/patches: $(dir_data)/patches/
+$(dir_out)/rei+/patches: $(dir_data)/patches/
 	@cp -av $^ $@
 
-$(dir_out)/rei/loader.cxi: $(dir_loader)
+$(dir_out)/rei+/loader.cxi: $(dir_loader)
 	@$(MAKE) $(FLAGS) -C $(dir_loader)
-	@mv $(dir_loader)/loader.cxi $(dir_out)/rei
+	@mv $(dir_loader)/loader.cxi $(dir_out)/rei+
     
 $(dir_build)/payloads.h: $(dir_payload)/emunand.s
 	@mkdir $(dir_build)
