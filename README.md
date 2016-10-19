@@ -1,7 +1,7 @@
-# ReiNand
+# ReiNand+
 [![License (GPL version 3)](https://img.shields.io/badge/license-GNU%20GPL%20version%203-red.svg?style=flat-square)](http://opensource.org/licenses/GPL-3.0)
 
-*The original open source N3DS CFW!*
+*This is just a reinand rewrite nobody will ever use*
 <sub> (now with O3DS support!)</sub>
 
 
@@ -33,7 +33,7 @@ Copy everything in 'out' folder to SD root and run!
     * Auto updates disabled
     * EShop update check disabled
     * RO verification disabled
-    * and [MORE](https://reisyukaku.org/3DS/ReiNand/patches)
+    * Language Emulation via /rei+/locales
 
 **Credits:**
  
