@@ -55,7 +55,7 @@ Copy everything in 'out' folder to SD root and run!
  The community for your support and help!
  
  
- # Side Note
+**Side Note**
  
  This simply just a reinand modification due to it not being really updated and falling behind. I will try my best to add the following:
  
