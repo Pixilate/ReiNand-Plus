@@ -1,7 +1,7 @@
 # ReiNand+
 [![License (GPL version 3)](https://img.shields.io/badge/license-GNU%20GPL%20version%203-red.svg?style=flat-square)](http://opensource.org/licenses/GPL-3.0)
 
-*This is just a reinand rewrite nobody will ever use*
+*This is just a reinand mod nobody will ever use*
 <sub> (now with O3DS support!)</sub>
 
 
