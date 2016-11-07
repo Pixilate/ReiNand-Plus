@@ -1,7 +1,7 @@
 /*
 *   firm.c
-*       by Reisyukaku
-*   Copyright (c) 2015 All Rights Reserved
+*       by Reisyukaku and Hikiruka
+*   Copyright (c) 2015-2016 All Rights Reserved
 */
 
 #include "firm.h"
@@ -40,7 +40,7 @@ uPtr sigPatchOffset1 = 0,
 //Load firm into FCRAM
 void loadFirm(void){
     //Read FIRM from SD card and write to FCRAM
-    fopen("/rei/firmware.bin", "rb");
+    fopen("/rei+/firmware.bin", "rb");
     firmSize = fsize()/2;
     if(PDN_MPCORE_CFG == 1) fseek(firmSize);
     fread(firmLocation, 1, firmSize);
