@@ -12,7 +12,7 @@ dir_data := data
 dir_build := build
 dir_cakehax := CakeHax
 dir_cakebrah := CakeBrah
-dir_loader := loader
+dir_loader := injector
 dir_out := binaries
 dir_payload := payloads
 
