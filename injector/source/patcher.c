@@ -1,5 +1,5 @@
-//Thank
-AuroraWright for the loader code!
+//Thank AuroraWright for the loader code!
+
 #include <3ds.h>
 #include "memory.h"
 #include "patcher.h"
