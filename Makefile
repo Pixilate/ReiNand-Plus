@@ -55,9 +55,9 @@ $(dir_out)/rei+/: $(dir_data)/firmware.bin $(dir_data)/splash.bin
 $(dir_out)/rei+/patches: $(dir_data)/patches/
 	@cp -av $^ $@
 
-$(dir_out)/rei+/loader.cxi: $(dir_loader)
+$(dir_out)/rei+/loader.cxi: $(dir_loader)/reinand.dat.cxi
 	@$(MAKE) $(FLAGS) -C $(dir_loader)
-	@mv $(dir_loader)/loader.cxi $(dir_out)/rei+
+	@mv $(dir_loader)/reinand.dat.cxi $(dir_out)/rei+
     
 $(dir_build)/payloads.h: $(dir_payload)/emunand.s
 	@mkdir $(dir_build)
