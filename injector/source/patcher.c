@@ -1,5 +1,4 @@
-//Thank
-AuroraWright for the loader code!
+//Thanks AuroraWright for the loader code
 #include <3ds.h>
 #include "memory.h"
 #include "patcher.h"
@@ -108,10 +107,10 @@ static u32 secureInfoExists(void)
 
 static int loadTitleLocaleConfig(u64 progId, u8 *regionId, u8 *languageId)
 {
-    /* Here we look for "/rei+/locales/[u64 titleID in hex, uppercase].txt"
+    /* Here we look for "/rei/locales/[u64 titleID in hex, uppercase].txt"
        If it exists it should contain, for example, "EUR IT" */
 
-    char path[] = "/rei+/locales/0000000000000000.txt";
+    char path[] = "/rei/locales/0000000000000000.txt";
 
     u32 i = 36;
 
