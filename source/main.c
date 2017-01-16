@@ -1,9 +1,9 @@
 /*
 *   main.c
-*       by Reisyukaku
+*       by Reisyukaku (optimized by Touka)
 *   Copyright (c) 2015 All Rights Reserved
 *
-*   Minimalist CFW for N3DS
+*   Minimalist CFW for 3DS
 */
 
 #include "firm.h"
