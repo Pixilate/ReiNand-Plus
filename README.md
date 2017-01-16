@@ -52,6 +52,8 @@ Copy everything in 'out' folder to SD root and run!
     
  Rei for coding everything else.
  
+ CrimsonMaple for fixing Makefile, Loader and Making a Release.
+ 
  The community for your support and help!
  
  

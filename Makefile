@@ -25,10 +25,13 @@ objects_cfw = $(patsubst $(dir_source)/%.s, $(dir_build)/%.o, \
 			  $(call rwildcard, $(dir_source), *.s *.c)))
 
 .PHONY: all
-all: a9lh loader ninjhax
+all:  launcher a9lh loader ninjhax
 
 .PHONY: a9lh
 a9lh: $(dir_out)/arm9loaderhax.bin
+
+.PHONY: launcher
+launcher: $(dir_out)/$(name).dat 
 
 .PHONY: loader
 loader: $(dir_out)/rei+/loader.cxi
@@ -45,19 +48,27 @@ clean:
 
 .PHONY: $(dir_out)/arm9loaderhax.bin
 $(dir_out)/arm9loaderhax.bin: $(dir_build)/main.bin
-	@mkdir -p "$(dir_out)"
+	@mkdir -p $(dir_out)
 	@cp -av $< $@
+
+.PHONY: $(dir_out)/$(name).dat
+$(dir_out)/$(name).dat: $(dir_build)/main.bin $(dir_out)/rei+/
+	@$(MAKE) $(FLAGS) -C $(dir_cakehax) launcher
+	dd if=$(dir_build)/main.bin of=$@ bs=512 seek=144
+	
+$(dir_out)/3ds/$(name):
+	@mkdir -p "$(dir_out)/3ds/$(name)"
+	@$(MAKE) $(FLAGS) -C $(dir_cakebrah)
+	@mv $(dir_out)/$(name).3dsx $@
+	@mv $(dir_out)/$(name).smdh $@
 	
 $(dir_out)/rei+/: $(dir_data)/firmware.bin $(dir_data)/splash.bin
-	@mkdir -p "$(dir_out)/rei+"
+	@mkdir -p "$(dir_out)/rei+/"
 	@cp -av $^ $@
 
-$(dir_out)/rei+/patches: $(dir_data)/patches/
-	@cp -av $^ $@
-
-$(dir_out)/rei+/loader.cxi: $(dir_loader)/reinand.dat.cxi
+$(dir_out)/rei+/loader.cxi: $(dir_loader)
 	@$(MAKE) $(FLAGS) -C $(dir_loader)
-	@mv $(dir_loader)/reinand.dat.cxi $(dir_out)/rei+
+	@mv $(dir_loader)/ReiNand+.dat.cxi $(dir_out)/rei+
     
 $(dir_build)/payloads.h: $(dir_payload)/emunand.s
 	@mkdir $(dir_build)

@@ -1,0 +1,3 @@
+[submodule "rop3ds"]
+	path = rop3ds
+	url = https://github.com/dukesrg/rop3ds
